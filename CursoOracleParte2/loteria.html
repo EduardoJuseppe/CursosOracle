@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA DE LOTERIA </h1>
+
+<script>
+
+	function saltarLinea(){
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<hr>");
+	}
+
+	function imprimir(frase){
+		document.write(frase);
+		saltarLinea();
+	}
+
+	function sortea(numero){
+		return (Math.round(Math.random()*numero));
+
+	}
+	var numeroAleatorio=Math.round(Math.random()*15)
+	var numeroSorteado=sortea(numeroAleatorio);
+	var numeroLanzado= parseInt(prompt("Ingrese un numero entre 0 y 15"));
+
+	if(numeroSorteado==numeroLanzado){
+		imprimir("Has ganado la loteria, el numero sorteado es: "+ numeroSorteado);
+	}
+	else {
+		if(numeroSorteado>numeroLanzado){
+		imprimir("Sigue intentando el numero sorteado es: " + numeroSorteado + " y es mayor al numero lanzado: " + numeroLanzado);
+		}
+		else{
+			imprimir("Sigue intentando el numero sorteado es: " + numeroSorteado + " y es menor al numero lanzado: " + numeroLanzado);
+		}
+	}
+	
+</script>
